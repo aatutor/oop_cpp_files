@@ -17,7 +17,7 @@ void PointClass::PrintGlobal(){
 
 int main()
 {
-	PointClass pointC{6, 8};
+	PointClass pointC{6, 8};        
 	pointC.PrintInline();
 	pointC.PrintGlobal();
 }
