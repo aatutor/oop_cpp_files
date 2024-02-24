@@ -3,73 +3,86 @@
 
 namespace MySpace 
 {
-  int x = 5;
+	int x = 5;
 
-  void foo() {
-    ++x;
-  }
+	void foo() {
+		++x;
+	}
 
-  class A {};
+	class A {};
 }
 
 namespace { // nameless namespace
-  int y;
+	int y;
 }
 
 namespace MySpace 
 {
-  A* pa = nullptr;            
+	A* pa = nullptr;						
 }
 
 
 int main() 
 {
-  printf("x: %d\n", MySpace::x); // 5
+	printf("x: %d\n", MySpace::x); // 5
 
-  MySpace::foo();
-  printf("x: %d\n", MySpace::x); // 6
+	MySpace::foo();
+	printf("x: %d\n", MySpace::x); // 6
 
-  MySpace::A a;
+	MySpace::A a;
 
-  {           // local scope
-    int y = 10;
-    ::y = 5;
-  }
-  printf("y: \n", y); // error     
-  printf("y: \n", ::y); // 5
+	{					 // local scope
+		int y = 10;
+		::y = 5;
+	}
+	printf("y: \n", y); // error		 
+	printf("y: \n", ::y); // 5
 
-  MySpace::pa = new MySpace::A();
+	MySpace::pa = new MySpace::A();
 
-  {
-    using namespace MySpace;
+	{
+		using namespace MySpace;
 
-    foo();
-    A a;
-    printf("x: %d\n", x);
-  }
-  printf("x: %d\n", x); // error
+		foo();
+		A a;
+		printf("x: %d\n", x);
+	}
+	printf("x: %d\n", x); // error
 
-  {
-    using MySpace::foo;
-    using MySpace::A;
+	{
+		using MySpace::foo;
+		using MySpace::A;
 
-    foo();
-    A a;
-    printf("x: %d\n", x); // error
-  }
+		foo();
+		A a;
+		printf("x: %d\n", x); // error
+	}
 
-  {
-    using namespace std;
+	{
+		using namespace std;
 
-    cout << string{"Hello world"} << endl;     
-  }
+		cout << string{"Hello world"} << endl;		 
+	}
 
-  {
-    using std::cout;
-    using std::endl;
-  
-    cout << std::string{"Hello world"} << endl;
-  }
+	{
+		using std::cout;
+		using std::endl;
+	
+		cout << std::string{"Hello world"} << endl;
+	}
 
-
+	if (true) 
+	{ // local scope
+		int i = 1; 
+	}
+	for (int i = 0; ... ; ... ) {
+		double temp = 0.01;
+		int i; // Error
+		{
+			int temp; // Error
+		}
+	}
+}
+void Foo (short i) {				 
+	bool* temp = ...;
 }

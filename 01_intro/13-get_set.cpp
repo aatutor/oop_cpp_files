@@ -19,7 +19,7 @@ int main()
 	// Point point{3, 4}; // нельзя задать private полям
 
 	Point point;
-	point.SetX(3);
+	point.SetX(3);						
 	point.SetY(4);
 	printf("(%d,%d)\n", p2.GetX(), p2.GetY());
 }

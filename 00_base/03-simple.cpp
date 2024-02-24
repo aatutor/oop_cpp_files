@@ -5,9 +5,9 @@ void demo1() {
 	try {
 		throw 404;  // return | break
 	}
-	catch (int err) {
+	catch (int code) {
 		cout << "Error with code: " 
-				<< err << endl;
+				 << code << endl;
 	}
 }
 void demo2() {
@@ -15,8 +15,8 @@ void demo2() {
     throw "Simple error :3";
     throw "Hard ERROR!!!";
   }
-  catch (const char* err) {
-    cout << err << endl;
+  catch (const char* str) {
+    cout << str << endl;
   }
 }
 

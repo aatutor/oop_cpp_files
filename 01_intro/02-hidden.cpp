@@ -9,5 +9,5 @@ struct Point {
 
 int main() {
 	Point p{'x_ =' 6, 'y_ =' 8};
-	p.Print(/*&p*/);
+	p.Print('&p');
 }

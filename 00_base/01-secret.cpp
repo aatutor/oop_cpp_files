@@ -3,7 +3,7 @@ using namespace std;
 
 double Div(double a, double b) {
   if (b == 0)
-    return ???;
+    return '???';
 
 	return a / b;
 }
@@ -19,7 +19,7 @@ int main() {
 		cin >> b;
 
 		double result = Div(a, b);    
-		if (result != ???)
+		if (result != '???')
 			cout << result << endl;
 		else
 			cout << "Inf\n";

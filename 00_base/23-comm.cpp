@@ -3,11 +3,10 @@
 
 void demo1()
 {
-//	cin >> b;
-//	if (b != 0)
-//		cout << (a / b) << endl;
-//	else
-//		cout << "Inf\n";
+	// if (b != 0)
+	// 	cout << (a / b) << endl;
+	// else
+	// 	cout << "Inf\n";
 
 	try {
 		cout << Div(a, b) << endl;
@@ -20,7 +19,6 @@ void demo1()
 void demo2() 
 {
 #if 0
-	cin >> b;
 	if (b != 0)
 		cout << (a / b) << endl;
 	else
