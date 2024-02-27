@@ -20,13 +20,13 @@
 - Любой самоучитель или книга по С++ и ООП
   - Учебник академии
   - [Учебник на метаните](https://metanit.com/cpp/tutorial/5.1.php)
-  - [Документация по библиотекам С++](https://en.cppreference.com/w/)
+  - [Официальное пособие](https://cplusplus.com/doc/tutorial/)
 - Стиль именования и форматирования:
   - [Рекомендации гугла](https://habr.com/ru/post/477722/)
   - [Сборная статья](https://habr.com/ru/post/172091/)
 - Для <u>*углубленного*</u> изучения C/С++:
   - [Курс видео-лекций в МФТИ по С++](https://youtube.com/playlist?list=PL3BR09unfgciJ1_K_E914nohpiOiHnpsK)
-  - [Документация](https://en.cppreference.com/w/cpp/regex)
+  - [Официальная документация](https://en.cppreference.com/w/cpp/regex)
   - [Набор задачек для закрепления знаний по С](http://www.gowrikumar.com/c/index.html)
 
 ---
