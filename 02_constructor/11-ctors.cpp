@@ -20,7 +20,7 @@ int main()
 {
 	{
 		Point* pp1 = new Point();  	
-		Point p2();
+		Point p2; // Point p2();
 	}
 	{
 		Point* p1 = new Point(); // больше не работает

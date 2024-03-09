@@ -59,12 +59,12 @@ Student::Student(const char* name): Student(name, {}, 0) {}
 // }
 
 Student::Student(
-		const char* name, 
-		const int marks[], 
-		int count)
-	:count_ (count), 
-	name_(new char[strlen(name)+1]),
-	marks_(new int[count])
+	const char* name, 
+	const int marks[], 
+	int count)
+		:count_ (count), 
+		name_(new char[strlen(name)+1]),
+		marks_(new int[count])
 {
 	strcpy(this->name_, name);
 
