@@ -3,32 +3,32 @@
 
 void Test()
 {
-	Student stud1;
-	stud1.Print();
+	double x = Div(1, 1);
+	cout << x << endl;
 
-	Student stud2;
-	stud2.Init("Ivan", 18);
-	stud2.Print();
+	double y = Div(0.0, 3.1);
+	cout << y << endl;
 
-	Student stud3;
-	stud3.Init("Petr", -1);
-	stud3.Init("", 1);
-	stud3.Print();
+	try {
+		double z = Div(1, 0);
+	} catch (int msg) {
+		cout << msg << endl;
+	}
 
 	{
-		Student stud;
-		stud.Print();
+		double x = Div(1, 1);
+		cout << x << endl;
 	}
 	{
-		Student stud;
-		stud.Init("Ivan", 18);
-		stud.Print();
+		double y = Div(0.0, 3.1);
+		cout << y << endl;
 	}
 	{
-		Student stud;
-		stud.Init("Petr", -1);
-		stud.Init("", 1);
-		stud.Print();
+		try {
+			double z = Div(1, 0);
+		} catch (int msg) {
+			cout << msg << endl;
+		}
 	}
 }
 

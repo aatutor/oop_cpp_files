@@ -9,7 +9,7 @@ namespace MySpace
 		++x;
 	}
 
-	class A {};
+	struct A {};
 }
 
 namespace { // nameless namespace

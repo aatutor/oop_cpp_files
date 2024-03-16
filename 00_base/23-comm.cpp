@@ -32,3 +32,29 @@ void demo2()
 	}
 #endif
 }
+
+#define LEGACY_DIV 0
+
+void Menu()
+{
+	double a, b;
+	while (true) {
+		cout << "input: ";
+		cin >> a;
+		if (a == 0) break;
+		cin >> b;
+#if LEGACY_DIV
+		if (b != 0)
+			cout << (a / b) << endl;
+		else
+			cout << "Inf\n";
+#else
+		try {
+			cout << Div(a, b) << endl;
+		}
+		catch(int error) {
+			cout << "Inf\n";
+		}
+#endif
+	}
+}
