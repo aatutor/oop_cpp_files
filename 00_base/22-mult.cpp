@@ -20,12 +20,12 @@ void Test()
 		cout << x << endl;
 	}
 	{
-		double y = Div(0.0, 3.1);
-		cout << y << endl;
+		double x = Div(0.0, 3.1);
+		cout << x << endl;
 	}
 	{
 		try {
-			double z = Div(1, 0);
+			double x = Div(1, 0);
 		} catch (int msg) {
 			cout << msg << endl;
 		}

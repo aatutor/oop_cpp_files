@@ -1,3 +1,4 @@
+// #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -7,14 +8,14 @@ const int MARK_COUNT = 3;
 
 struct Student 
 {
-	char* name_; // ФИО
-	int* marks_; // оценки
-	int count_;
+	char* name_ = nullptr; // ФИО
+	int* marks_ { nullptr }; // оценки
+	int count_ = 0;
 
-	Student();
-	Student(const char*);
-	Student(const char*, const int[], int);
-	~Student();
+	// Student();
+	// Student(const char*);
+	// Student(const char*, const int[], int);
+	// ~Student();
 
 	void InitStudent(const char*, const int [], int);
 
@@ -24,89 +25,55 @@ struct Student
 
 int main()
 {
-	cout << "Student profile.\n";
-
-	Student student;
 	int studentMarks[]{ 4,4,3 };
+	Student* pSt = new Student("Petr", studentMarks, 3);
+	char* str = pSt->name_;
+	// delete pSt;
+	cout << str << endl;
 
-	Student stud("Alexey");
-	Student st2("Petr", studentMarks, 3);
-	// Student st3("Alex", studentMarks);
+	// Student stud("Alexey");
 
-	const char* studentName{ "Petrov A.O." };
+	// Student student;
+	// student.InitStudent("Petrov A.O.", studentMarks, 3);
 
-	student.InitStudent(studentName, studentMarks, 3);
-	student.PrintStudent();
-	cout << "Average mark: "
-		<< fixed << setprecision(2)
-		<< student.AverageMark() << endl;
+	// cout << "Student profile:\n";
+	// student.PrintStudent();
+	// cout << "Average mark: " << student.AverageMark() << endl;
+
 	return 0;
 }
 
-Student::Student(): Student("Ivan") {}
-Student::Student(const char* name): Student(name, {}, 0) {}
-// Student::Student(const char* name, const int marks[], int count){
-// 	// InitStudent(name, marks, count);
+// // заполнение данных о студенте
+// void Student::InitStudent(const char* name, const int marks[], int count)
+// {
+// 	if (name_ == nullptr || strlen(this->name_) < strlen(name)){
+// 		delete [] name_;
+// 		name_ = new char[strlen(name)+1];
+// 	}
+// 	strcpy(this->name_, name);// \0 ?
 
-//	 this->name_ = new char[strlen(name)+1];
-//	 strcpy(this->name_, name);
+// 	delete [] marks_;
+// 	marks_ = new int[count];
 
 // 	this->count_ = count;
 
-//	 this->marks_ = new int[count];
-//	 for (int i = 0; i < count_; i++)
-//		 this->marks_[i] = marks[i];
+// 	for (int i = 0; i < count_; i++)
+// 		this->marks_[i] = marks[i];
 // }
-
-Student::Student(
-	const char* name, 
-	const int marks[], 
-	int count)
-		:count_ (count), 
-		name_(new char[strlen(name)+1]),
-		marks_(new int[count])
-{
-	strcpy(this->name_, name);
-
-	for (int i = 0; i < count_; i++)
-		this->marks_[i] = marks[i];
-}
-Student::~Student(){
-	delete [] name_;
-	delete [] marks_;
-}
-
-// заполнение данных о студенте
-void Student::InitStudent(const char* name, const int marks[], int count)
-{
-	if (name_ == nullptr || strlen(this->name_) < strlen(name)){
-		delete [] name_;
-		name_ = new char[strlen(name)+1];
-	}
-	strcpy(this->name_, name);// \0 ?
-
-	delete [] marks_;
-	marks_ = new int[count];
-
-	this->count_ = count;
-
-	for (int i = 0; i < count_; i++)
-		this->marks_[i] = marks[i];
-}
-// вычисление средней оценки
-double Student::AverageMark()
-{
-	double sum = 0;
-	for (int i = 0; i < count_; i++)
-		sum += marks_[i];
-	return sum / count_;
-}
-// вывод данных о студенте
-void Student::PrintStudent()
-{
-	cout << name_ << endl;
-	cout << "Marks: ";
-	for (int i = 0; i < count_; i++)
-		cout << setw(4) << marks_[i];
-	cout << endl;
-}
+// // вычисление средней оценки
+// double Student::AverageMark()
+// {
+// 	double sum = 0;
+// 	for (int i = 0; i < count_; i++)
+// 		sum += marks_[i];
+// 	return sum / count_;
+// }
+// // вывод данных о студенте
+// void Student::PrintStudent()
+// {
+// 	cout << name_ << endl;
+// 	cout << "Marks: ";
+// 	for (int i = 0; i < count_; i++)
+// 		cout << setw(4) << marks_[i];
+// 	cout << endl;
+// }
