@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <algorithm>
 using namespace std;
 
 class Point {
@@ -69,7 +69,7 @@ int main ()
 #if 0
 	{ //    ↓↓↓ выключено
 		Point p1(move(Point(1, 2)));
-		Point p2(p1);
+		Point p2(p1); // copy
 	}
 	{
 		Point p1(); // по умолчанию

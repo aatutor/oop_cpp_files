@@ -1,18 +1,7 @@
 #include <iostream>
 #include <string>
 
-class Point{
-    ...
-public:
-    Point& operator-- ();
-    Point  operator-- (int);
-
-    Point& operator+= (const Point&);
-    Point& operator-= (const Point&);
-    Point& operator*= (const int&);
-    Point& operator/= (const int&);
-}
-// + описать вывод (cout << "строка") НЕдружественной перегрузкой
+class Library;
 
 struct Book {
 	std::string title_;
@@ -50,9 +39,9 @@ public:
 int main ()
 {
 	using namespace std;
-	Book b1 = {"War and Peace", "Leo Tolstoy", 1869},
-	Book b2 = {"Anna Karenina", "Leo Tolstoy", 1877},
-	Book b2 = {"Crime and Punishment", "Fyodor Dostoevsky", 1866},
+	Book b1 = {"War and Peace", "Leo Tolstoy", 1869};
+	Book b2 = {"Anna Karenina", "Leo Tolstoy", 1877};
+	Book b3 = {"Crime and Punishment", "Fyodor Dostoevsky", 1866};
 
 	Library lib1 = b1 + b2;
 	cout << "b1 + b2" << endl;
