@@ -1,16 +1,18 @@
-#include <stdio.h>
+#include <iostream>
+#include <string>
+using std::string;
 
 struct Student 
 {
-	char* name_; // ФИО
+	string name_; // ФИО
 	int* marks_; // оценки
 	int count_;
-	static char* university;
+	static string university;
 public:
-	Student(char* name, int* marks, int count);
+	Student(string name, int* marks, int count);
 	~Student();
 	void PrintInfo() const;
-	friend double MaxMark(Student stud[]);
+	friend int MaxMark(Student* stud[], int n);
 };
 
 
