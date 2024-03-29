@@ -8,7 +8,6 @@ public:
     Array(size_t size = 0);
     int GetElem(size_t ind) const;
     void SetElem(size_t ind, int val);
-    void Print() const;
     friend ostream& operator<< (ostream& out, const Array& p);
     friend istream& operator>> (istream& in, Array& p);
     Array& operator++ ();
@@ -17,6 +16,7 @@ public:
     Array operator+= (int value);
     Array operator+= (const Array& right);
 }
+
 
 int main()
 {

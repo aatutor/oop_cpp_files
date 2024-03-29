@@ -12,9 +12,7 @@ public:
 		return out;
 	}
 	friend istream& operator>> (istream& in, Point& p) {
-		in >> p.x_;
-		in.ignore(1);
-		in >> p.y_;
+		in >> p.x_ >> p.y_;
 		return in;
 	}
 };
@@ -26,6 +24,7 @@ int main ()
 	cout << point << endl;
 	 
 	cin >> point;
+	
 	cout << point << endl;
 
 	return 0;

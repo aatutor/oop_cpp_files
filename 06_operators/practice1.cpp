@@ -28,8 +28,7 @@ public:
 	Library(Book books[], int count);
 	~Library();
 	Book& GetBook(int index);
-	// std::string ToString();
-	void Print();
+	friend ostream& operator<< (ostream& out, const Library& lib);
 	Library Concat(Library& lib);
 	Library operator+ (Book& book);
 	Library operator- (Book& book);
