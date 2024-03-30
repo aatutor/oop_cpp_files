@@ -10,9 +10,9 @@ public:
 	Point operator- () const {
 		return {-this->x_, this->y_};
 	}
-  Point operator- (const Point& right) const {
-    return (*this) + (-Point{right});
-  }
+	Point Point::operator- (const Point& right) const {
+		return { this->x_ - right.x_, this->y_ - right.y_ };
+	}
 	std::string ToString() const {
 		return std::to_string(x_)+","+ std::to_string(y_);
 	}
