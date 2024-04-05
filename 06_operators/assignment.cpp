@@ -10,8 +10,8 @@ public:
 		:x_(new int(x)), y_(new int(y)) {}
 
 	~Point() {
-		delete x_;
-		delete y_;
+		delete this->x_;
+		delete this->y_;
 	}
 #if 0
   Point() = default;
@@ -23,25 +23,25 @@ public:
 
 	Point(const Point& from) {
 		printf("copy\n");
-		x_ = new int{*(from.x_)};
-		y_ = new int{*(from.y_)};
+		this->x_ = new int{*(from.x_)};
+		this->y_ = new int{*(from.y_)};
 	}
 	Point& operator= (const Point& from) {
 		printf("copy=\n");
-		*x_ = *(from.x_);
-		*y_ = *(from.y_);
+		*(this->x_) = *(from.x_);
+		*(this->y_) = *(from.y_);
 		return *this;
 	}
 
 	Point(Point&& from) {
 		printf("move\n");
-		swap(x_, from.x_);
-		swap(y_, from.y_);
+		swap(this->x_, from.x_);
+		swap(this->y_, from.y_);
 	}
 	Point& operator= (Point&& from) {
 		printf("move=\n");
-		swap(x_, from.x_);
-		swap(y_, from.y_);
+		swap(this->x_, from.x_);
+		swap(this->y_, from.y_);
 		return *this;
 	}
 

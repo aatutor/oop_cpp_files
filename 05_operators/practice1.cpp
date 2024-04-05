@@ -15,8 +15,7 @@ struct Book {
 		return title_+" ("+ author_ +", "+ std::to_string(year_) +")";
 	}
 	Library operator+ (Book& book);
-	bool operator== (Book& book);
-	bool operator!= (Book& book);
+	bool operator> (Book& book);
 };
 
 class Library {
@@ -29,9 +28,9 @@ public:
 	// std::string ToString();
 	void Print();
 	Library Concat(Library& lib);
+	Library operator+ (Library& lib);
 	Library operator+ (Book& book);
 	Library operator- (Book& book);
-	Library operator+ (Library& lib);
 };
 
 int main ()
@@ -48,6 +47,10 @@ int main ()
 	Library lib2 = b1 + b2 + b3;
 	cout << "b1 + b2 + b3" << endl;
 	lib2.Print();
+
+	Library cuted = lib2 - b1;
+	cout << "b2 + b3" << endl;
+	cuted.Print();
 
 	return 0;
 }

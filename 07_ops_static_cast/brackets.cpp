@@ -39,8 +39,8 @@ public:
 		if (axis == 1) this->y_ = val;
 		if (axis == 2) this->z_ = val;
 	}
-	void operator() (int ind, int val) {
-		this->SetAxis(ind, val);
+	void operator() (char c, int val) {
+		this->SetAxis(c, val);
 	}
 	void operator() (int x, int y, int z) {
 		this->x_ = x;
@@ -71,7 +71,7 @@ int main()
 	a[1] = 3; // ok
 	a['y'] = 3; // ok
 
-	a(2, 9);
+	a('z', 9);
 
 	cout << a << endl;
 

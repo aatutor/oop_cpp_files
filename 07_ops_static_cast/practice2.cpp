@@ -26,7 +26,7 @@ public:
 	Library Concat(Library& lib);
 	// Book& GetBook(int index);
 	Book& operator[] (int index);
-	Book operator[] (std::string title);
+	Book  operator[] (std::string title);
 	Library operator() (std::string author);
 	Library operator() (int year);
 };
