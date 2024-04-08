@@ -46,3 +46,7 @@ int main ()
 
 	return 0;
 }
+
+class Demo {
+	inline static int st = 0;
+}

@@ -2,21 +2,31 @@
 #include <string>
 using std::string;
 
-struct Student 
-{
-	string name_; // ФИО
-	int* marks_; // оценки
-	int count_;
-	static string university;
+class Car {
+	string model_;
+	int year_;
+	static string conveyourModel_;
 public:
-	Student(string name, int* marks, int count);
-	~Student();
-	void PrintInfo() const;
-	friend int MaxMark(Student* stud[], int n);
+	Car();
+	string ToString();
+	static void SetConveyourModel (string model);
 };
+string Car::conveyourModel_ = "Niva";
 
 
-int main () {
+int main () 
+{
+	Car lot[3];
+
+	Car::SetConveyourModel("Lada");
+
+	Car lot2[4];
+
+	for (int i = 0; i < 3; i++)
+		cout << lot[i].ToString() << endl;
+
+	for (int i = 0; i < 4; i++)
+		cout << lot2[i].ToString() << endl;
 
 	return 0;
 }
