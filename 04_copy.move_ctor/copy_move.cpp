@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <vector>
 
 class Point {
 	int* dot_;
@@ -26,51 +28,48 @@ public:
 #endif
 	~Point() { delete this->dot_; }
 	void SetX(int d) { *(this->dot_) = d; }
-	void Print() {
-		printf("%d\n", *(this->dot_));
+	std::string ToString() {
+		return std::to_string(*(this->dot_));
 	}
 };
 
 Point PointFactory(int x) {  
-	Point p1(x), p2(x);
-	if (1)
-		return p1;
-	else
-		return p2;
+	return 1 ? Point(x) : Point(0);
 }
 
 int main ()
-{
+{ 
+	using namespace std;
 	{
 		Point p1(5);
 		Point p2(p1);
 
-		p2.Print(); // ??
+		cout << p2.ToString() << endl; // ??
 		p1.SetX(6);
-		p2.Print(); // ??
+		cout << p2.ToString() << endl; // ??
 	}
 	{
 		Point* pp1 = new Point(5);
 		Point* pp2 = new Point(*pp1);
-		pp2->Print(); // ??
+		cout << pp2->ToString() << endl; // ??
 
 		delete pp1;
-		pp2->Print(); // ??
+		cout << pp2->ToString() << endl; // ??
 
 		delete pp2;
 	}
 	{
 		Point p1(std::move(Point(5)));
-		p1.Print();
+		cout << p1.ToString() << endl;
 
 		std::vector<Point> v;
 		v.push_back(Point(10));
 			// где-то внутри vector'а
 			// вызван move ctor
-
-
+	}
+	{
 		Point p1 ( PointFactory(5) );
-		p1.Print();
+		cout << p1.ToString() << endl;
 	}
 
 	return 0;
