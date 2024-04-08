@@ -1,19 +1,22 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Box{
   std::string value_;
 public:
+  Box();
   Box(const char*);
-  ~Box();
   double Size() { return 2; }
+  string ToString();
 };
 class Car{
   std::string model_;
 public:
+  Car();
   Car(const char*);
-  ~Car();
   double Size() { return 3; }
+  string ToString();
 };
 
 template <typename T>

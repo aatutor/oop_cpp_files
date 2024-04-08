@@ -12,7 +12,7 @@ class Array {
 	T* arr_;
 	int size_;
 public:
-	Array(T arr[],int size): size_(size){
+	Array(T arr[], int size): size_(size){
 		this->arr_ = new T[size];
 		for(int i = 0; i < this->size_; i++)
 			this->arr_[i] = arr[i];
