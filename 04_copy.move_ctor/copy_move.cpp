@@ -33,8 +33,9 @@ public:
 	}
 };
 
-Point PointFactory(int x) {  
-	return 1 ? Point(x) : Point(0);
+Point PointFactory(int x) {
+	if (1) return Point(x);
+	return Point(0);
 }
 
 int main ()

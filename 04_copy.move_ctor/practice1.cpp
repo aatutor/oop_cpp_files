@@ -2,10 +2,11 @@
 #include <string>
 
 struct Book {
+	// size_t id_;
 	std::string title_;
 	std::string author_;
-	int year_;
-	Book (std::string title, std::string author, int year) {
+	size_t year_;
+	Book (std::string title, std::string author, size_t year) {
 		this->title_ = title;
 		this->author_ = author;
 		this->year_ = year;
@@ -18,13 +19,13 @@ struct Book {
 
 class Library {
 	Book* books_;
-	int count_;
+	size_t count_;
 public:
-	Library(Book books[], int count);
+	Library(Book books[], size_t count);
 	// Library(Library& lib);
 	// Library(Library&& lib);
 	~Library();
-	Book& GetBook(int index);
+	Book& GetBook(size_t index);
 	// std::string ToString();
 	void Print();
 	Library Concat(Library& lib);
@@ -39,6 +40,7 @@ int main ()
 		{"Crime and Punishment", "Fyodor Dostoevsky", 1866},
 	};
 	Library lib(books, 3);
+#if 0
 	Library copy(lib);
 
 	lib.GetBook(0).author_ = "Alex Pushkin";
@@ -49,7 +51,6 @@ int main ()
 	cout << "\tCopy: " << endl;
 	copy.Print();
 
-#if 0
 	Library newLib = lib.Concat(copy);
 	cout << "\tConcat: " << endl;
 	newLib.Print();
