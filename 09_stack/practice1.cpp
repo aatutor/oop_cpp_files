@@ -24,11 +24,11 @@ int main()
 	Stack<int, 50> st;
 #endif
 
-	for (size_t i = 0; i < 50; i++)
+	for (size_t i = 0; !st.IsFull(); i++)
 		st.Push(i);
 
 	while(!st.IsEmpty())
-		cout << st.Pop() << endl;
+		cout << st.Extract() << endl;
 
 	return 0;
 }
