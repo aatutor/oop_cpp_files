@@ -15,7 +15,7 @@ struct Book {
 		return title_+" ("+ author_ +", "+ std::to_string(year_) +")";
 	}
 	Library operator+ (Book& book);
-	bool operator> (Book& book);
+	bool operator== (Book& book);
 };
 
 class Library {
@@ -41,6 +41,7 @@ int main ()
 	Book b2 = {"Crime and Punishment", "Fyodor Dostoevsky", 1866},
 
 	Library lib1 = b1 + b2;
+#if 0
 	cout << "b1 + b2" << endl;
 	lib1.Print();
 
@@ -51,6 +52,7 @@ int main ()
 	Library cuted = lib2 - b1;
 	cout << "b2 + b3" << endl;
 	cuted.Print();
+#endif
 
 	return 0;
 }

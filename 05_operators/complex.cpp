@@ -19,7 +19,7 @@ public:
 };
 
 Point operator+ (const Point& left, const Point& right){
-	return Point{ left.x_ + right.x_, left.y_ + right.y_ };
+	return { left.x_ + right.x_, left.y_ + right.y_ };
 }
 
 Point Point::operator+ (const Point& right) const {
