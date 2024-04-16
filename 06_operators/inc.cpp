@@ -21,10 +21,10 @@ public:
 #endif
 	Point operator++ (int) {
 		Point before(*this); // copy
-		++(this->x_);
-		++(this->y_);
+		++(*this);
 		return before;
 	}
+	
 	std::string ToString(){
 		return std::to_string(x_)+","+ std::to_string(y_);
 	}

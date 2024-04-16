@@ -30,6 +30,7 @@ public:
 	Book& GetBook(int index);
 	friend ostream& operator<< (ostream& out, const Library& lib);
 	Library Concat(Library& lib);
+	Library operator= (const Library& lib);
 	Library operator+= (Library& lib);
 	Library operator+= (Book& book);
 	Library operator-= (Book& book);
