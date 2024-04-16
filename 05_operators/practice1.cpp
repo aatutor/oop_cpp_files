@@ -40,8 +40,8 @@ int main ()
 	Book b2 = {"Anna Karenina", "Leo Tolstoy", 1877},
 	Book b2 = {"Crime and Punishment", "Fyodor Dostoevsky", 1866},
 
-	Library lib1 = b1 + b2;
 #if 0
+	Library lib1 = b1 + b2;
 	cout << "b1 + b2" << endl;
 	lib1.Print();
 
