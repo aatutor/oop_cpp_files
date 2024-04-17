@@ -1,18 +1,18 @@
 #include <iostream>
 
-struct Node {
-	char val; // 1-byte int
-	Node* next;
+struct Digit {
+	char value; // 1-byte int
+	Digit* next;
 	// ...?
 };
 
 class BigNumber{
-	Node* top_ = nullptr;
+	Digit* top_ = nullptr;
 public:
 	...
 	BigNumber operator+ (BigNumber& right);
 	...
-}
+};
 
 int main()
 {
