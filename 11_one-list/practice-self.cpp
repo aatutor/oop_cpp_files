@@ -1,16 +1,19 @@
 #include <iostream>
 
+template <typename T>
 struct Node {
-	int val;
-	Node* next;
+	T val;
+	Node<T>* next;
 };
 
+template <typename T>
 class List {
 	enum { EMPTY = -1 };
-	Node* top_ = nullptr;
+	Node<T>* top_ = nullptr;
 public:
 	...
-/*
+/* +++
+Описать метод очистки
 Описать деструктор
 Описать конструктор для initializer_list
 Реализовать "правило 3" (или 5)
@@ -21,15 +24,15 @@ public:
 */
 };
 
-void Test(){
-	List list;
+void TestInt(){
+	List<int> list;
 	list.PushBack(111);
 	list >> std::cout;
 }
 
 int main()
 {
-	Test();
+	TestInt();
 
 	return 0;
 }
