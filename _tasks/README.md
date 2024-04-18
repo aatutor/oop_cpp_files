@@ -24,5 +24,5 @@
 	- [Официальное пособие](https://cplusplus.com/doc/tutorial/)
 - Для <u>*углубленного*</u> изучения C/С++:
 	<!-- - [Курс видео-лекций в МФТИ по С++](https://youtube.com/playlist?list=PL3BR09unfgciJ1_K_E914nohpiOiHnpsK) -->
-	- [Официальная документация](https://en.cppreference.com/w/cpp/regex)
+	- [Официальная документация](https://en.cppreference.com/w/c/memory)
 	- [Набор задачек для закрепления знаний по С](http://www.gowrikumar.com/c/index.html)
