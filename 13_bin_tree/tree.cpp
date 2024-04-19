@@ -12,11 +12,12 @@ struct Node {
 	Node* right = nullptr;
 	Node* parent = nullptr;
 };
+
 class ElemTree {
 	Node* root_ = nullptr;
 
 public:
-	bool IsEmpty() { 
+	bool IsEmpty() {
 		return root_ == nullptr; 
 	}
 	void Insert(Pair* elem) {
@@ -45,30 +46,26 @@ public:
 		else
 			curParent->right = obj;
 	}
-	// friend ostream& operator<< (ostream& out, ElemTree& tree)
-	// void operator>> (ostream& out)
-	void Print() {
-		if (IsEmpty())
-			return;
-
-		using namespace std;
-		Node* temp = Min(root_);
-		while(temp){
-			cout << temp->element->value << "["
-			     << temp->element->key << "], ";
-			temp = Next(temp);
-		}
-		cout << endl;
+	void operator>> (std::ostream& out) {
+		Print(root_, out);
+		out << "\n";
 	}
 	Pair* Search(int key) {
 		return Search(key, root_)->element;
 	}
 	void Remove(int key) {
-		// search node
-		// remove node
-
+		Remove1(Search(key, root_));
 	}
 private:
+	void Print(Node* obj, std::ostream& out) {
+		if (obj == nullptr)
+			return;
+
+		Print(obj->left, out);
+		out << obj->element->value << "["
+		    << obj->element->key << "], ";
+		Print(obj->right, out);
+	}
 	Node* Min(Node* obj) {
 		while (obj->left)
 			obj = obj->left;
@@ -93,7 +90,7 @@ private:
 			int tempKey = temp->element->key;
 			if (key == tempKey)
 				break;
-			else if (key < tempKey)
+			if (key < tempKey)
 				temp = temp->left;
 			else
 				temp = temp->right;
@@ -101,6 +98,9 @@ private:
 		return temp;
 	}
 	void Remove(Node* obj) {
+		if (!obj)
+			throw "nothing to delete\n";
+		
 		if (root_ == obj) { // delete root
 			if (obj->left == 0 && obj->right == 0)
 				root_ = nullptr;
@@ -148,7 +148,10 @@ private:
 		}
 		delete obj;
 	}
-	void Remove1(Node* obj){
+	void Delete(Node* obj){
+		if (!obj)
+			throw "nothing to delete\n";
+		
 		Node* temp, *curParent;
 		if (obj->left == nullptr || obj->right == nullptr)
 			curParent = obj;
@@ -175,7 +178,6 @@ private:
 		}
 		delete curParent;
 	}
-
 };
 
 int main()
@@ -183,19 +185,18 @@ int main()
 	using namespace std;
 
 	ElemTree tree;
-	Pair pairs[] = {{0, 'a'}, {1, 'b'}, {2, 'c'}};
+	Pair pairs[] = {{5, 'a'}, {1, 'b'}, {8, 'c'}};
+
 	for (size_t i = 0; i < 3; i++)
 		tree.Insert(&pairs[i]);
+	tree >> cout;
+	
+	tree.Remove(5);
+	tree >> cout;
 
-	tree.Print();
-	cout << endl;
-	tree.Remove(0);
-	tree.Print();
-	cout << endl;
 	tree.Remove(1);
-	tree.Print();
-	cout << endl;
-	tree.Remove(2);
-	tree.Print();
-	cout << endl;
+	tree >> cout;
+
+	tree.Remove(8);
+	tree >> cout;
 }
