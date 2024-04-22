@@ -14,6 +14,7 @@ struct Book {
 	}
 	Book() {}
 	operator std::string ();
+	// operator Library(); ??
 };
 
 class Library {
