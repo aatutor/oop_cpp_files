@@ -18,7 +18,7 @@ public:
   double Size() { return 3; }
   string ToString();
 };
-
+// template <typename T, int LIMIT>
 template <typename T>
 class Container{
   T* arr_;
@@ -29,7 +29,7 @@ public:
   ~Container();
   void Show();
   bool IsFull();
-  void Add(T);
+  void Load(T);
 };
 
 

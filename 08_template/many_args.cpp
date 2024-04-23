@@ -15,8 +15,8 @@ void Print(int count, int t, ...){
 int Sum() {
 	return 0;
 }
-template <typename... T>
-int Sum(int x, T... list){
+template <typename T, typename... U>
+T Sum(T x, U... list){
 	cout << x <<" ";
 	return x + Sum(list...);	
 }

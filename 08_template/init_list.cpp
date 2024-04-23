@@ -22,13 +22,13 @@ void Print(initializer_list<T> list) {
 
 #elif 1
 	const T* ptr = list.begin();
-	for(unsigned i = 0; i != list.size(); ++i)
+	for(size_t i = 0; i != list.size(); ++i)
 	{
 		cout << ptr[i] <<" ";
 	}
 
 #else
-	for(const T el : list)
+	for(const T& el : list)
 	{// for each el in list
 		cout << el << " ";
 	}

@@ -4,7 +4,7 @@ using namespace std;
 template <typename T> T Max(T a, T b);
 
 template <typename T>
-T* Geterate(int size) {
+T* Generate(int size) {
   return new T[size];
 }
 
@@ -17,7 +17,7 @@ int main ()
 	}
 #if 0
 	Max(5, 6); // T = int
-	Geterate(5); // T = ???
+	Generate(5); // T = ???
 #endif
 	{
 		int* x = Generate<int>(5);  // T=int
@@ -26,7 +26,7 @@ int main ()
 		bool* b = Generate<char>(5);// T=?
 	}
 	{
-		cout << Max<int>(3, 5) << endl;
+		cout << Max<int>(3.0, 5.0) << endl;
 		cout << Max<double>(3.5, 3.3) << endl;
 		cout << Max<char>('b', 'h') << endl;
 	}
