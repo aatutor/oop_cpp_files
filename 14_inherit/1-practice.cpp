@@ -23,13 +23,15 @@ class Bus : public Car{
 public:
 	...
 	int GetFreeSeats();
-	void Inplace(size_t people);
-	
+	bool Inplace(size_t people);
+	bool Outplace(size_t people);
 }
 
 int main ()
 {
-	
+	{
+		
+	}	
 
 	return 0;
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Point1d {
@@ -6,31 +7,27 @@ public:
 	int x_;
 
 	Point1d(int x);
-	void Print();
+	string ToString();
+	// string InBrackets(string inner);
+	// string LineToBrackets(initializer_list<int> line);
 };
 class Point2d : public Point1d {
 public:
 	int y_;
 
 	Point2d(int x, int y);
-	void Print();
+	string ToString();
 };
-
-void IncX(Point1d* pt, int dx) {
-	pt->x_ += dx;
-}
 
 int main ()
 {
 	{
-		Point1d* p1 = new Point1d(3);
-		IncX(p1, 5);
-		p1->Print();
+		Point1d p(3);
+		cout << p.ToString() << endl;
 	}
 	{
-		Point2d* p2 = new Point2d(1, 2);
-		IncX(p2, 10);
-		p2->Print();
+		Point2d p(1, 2);
+		cout << p.ToString() << endl;
 	}
 
 	return 0;

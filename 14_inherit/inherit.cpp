@@ -40,9 +40,6 @@ using namespace std;
 		int y_;
 	public:
 		B(int x, int y):  A(x), y_(y) {}
-		int GetX() {
-			return A::GetX();
-		}
 		int GetY() {
 			return y_;
 		}
@@ -50,8 +47,8 @@ using namespace std;
 
 	void Test() 
 	{
-		A dim1{1};
-		B dim2{2, 3};
+		A dim1(1);
+		B dim2(2, 3);
 
 		cout << dim1.GetX() << endl;
 		cout << dim2.GetX() << " " << dim2.GetY() << endl;
