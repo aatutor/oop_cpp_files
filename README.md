@@ -5,6 +5,8 @@
 [Актуальные](https://oop-cpp-lections-al-teemo-a081cbf0c0758a81115627cecb612d515757c.gitlab.io/) презентации.
 [Архив](https://sourceforge.net/projects/cpp-oop-top-aca/files/Lections/active/) со старыми презентациями.
 
+[ДЗ](https://oop-cpp-lections-al-teemo-a081cbf0c0758a81115627cecb612d515757c.gitlab.io/hommy.html)
+
 ---
 ### Закрывайте пробелы
 
