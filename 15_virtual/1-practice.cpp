@@ -4,36 +4,23 @@
 using namespace std;
 
 class Person {
-	char name_[100];
+	std::string name_;
 	short age_;
 public:
-	Person(const char name[100], short age): age_(age) {
-		strcpy(name_, name);
-	}
-	void Info() {
-		using namespace std;
-		cout << "\nName: " << name_ <<"\nAge: "<< age_ << endl; 
-	}
+	Person(std::string name, short age);
+	void Info();
 };
 class Student: public Person {
 	int group_;
 public:
-	Student(const char name[100], short age, int grp): Person(name, age), group_(grp) {}
-	void Info() {
-		Person::Info();
-		cout << "Post: Student\nGroup: "<< group_ << endl;
-	}
+	Student(std::string name, short age, int grp);
+	void Info();
 };
 class Teacher: public Person {
-	char education_[50];
+	std::string education_;
 public:
-	Teacher(const char name[100], short age, const char edu[50]): Person(name, age) {
-		strcpy(education_, edu);
-	}
-	void Info() {
-		Person::Info();
-		cout << "Post: Teacher\nEducation: "<< education_ << endl;
-	}
+	Teacher(std::string name, short age, std::string edu);
+	void Info();
 };
 
 void Test() 
