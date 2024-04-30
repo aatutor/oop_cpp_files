@@ -24,21 +24,31 @@ public:
 };
 class Lion: public Cat {
 public:
-	std::string zoo_;
+	std::string* zoo_;
 	Lion(std::string name);
+	void AddZoo(std::string zoo);
+	void EraseZoo(std::string zoo);
+	~Lion();
 };
 
+#define COUNT 4
 int main ()
 {
-	Animal* animals[4] = {
+	Lion* leo = new Lion("King");
+	leo->AddZoo("Siberia");
+
+	Animal* animals[] = {
 		new Dog("Bob"),
 		new Cat("Murka"),
 		new Frog("Vasya"),
-		new Lion("King")
+		leo
 	};
 	
-	for(int k=0; k<4; k++)
+	for(int k=0; k<COUNT; k++)
 		animals[k]->Speak();
+
+	for(int k=0; k<COUNT; k++)
+		delete animals[k];
 	
 	return 0;
 }
