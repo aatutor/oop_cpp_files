@@ -10,6 +10,11 @@
 	2. Сделать стек шаблонным
 	template <typename T, int SIZE_> class Stack{...};
 */
+	class Stack {
+		int* st_;
+		…
+	}
+	
 class Stack {
 	...
 };

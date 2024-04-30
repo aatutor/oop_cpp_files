@@ -27,52 +27,52 @@ public:
 };
 int Ring::id = 0;
 
-int x = 5;
-string ToString(int z) {
-    int y=10;
-    return to_string(x+y+z);
-}
-ToString(100);
+// int x = 5;
+// string ToString(int z) {
+//     int y=10;
+//     return to_string(x+y+z);
+// }
+// ToString(100);
 
-Ring r;
-r.ToString();
+// Ring r;
+// r.ToString();
 
 class Bar {
-	std::stack<Ring*> st_; // или std::stack<Ring*>
+		std::stack<Ring*> st_; // или std::stack<Ring*>
 public:
-	void Push(Ring* r){
-	    st_.push(r);
-	}
-	size_t GetSize() {
-	    return st_.size();
-	}
-	void ShowLevel(int lvl){
-	    string s = ":";
-	    if (st_.size() == lvl){
-	        s = st_.top()->ToString();
-	        st_.pop();
-	    }
-	    cout <<" "<< s << " ";
-	}
-	void Swap(Bar& other){
-	    if (st_.size() + other.st_.size() == 0)
-	        return;
-	        
-	    if (st_.size() == 0)
-	        other.MoveTo(*this);
-	    else if (other.st_.size() == 0)
-	        this->MoveTo(other);
-	    else {
-	        if (st_.top()->GetR() > other.st_.top()->GetR())
-	            other.MoveTo(*this);
-	        else
-	            this->MoveTo(other);
-	    }
-	}
-	void MoveTo(Bar& target) {
-	    target.st_.push(st_.top());
-	    st_.pop();
-	}
+		void Push(Ring* r){
+				st_.push(r);
+		}
+		size_t GetSize() {
+				return st_.size();
+		}
+		void ShowLevel(int lvl){
+				string s = ":";
+				if (st_.size() == lvl){
+						s = st_.top()->ToString();
+						st_.pop();
+				}
+				cout <<" "<< s << " ";
+		}
+		void Swap(Bar& other){
+				if (st_.size() + other.st_.size() == 0)
+						return;
+						
+				if (st_.size() == 0)
+						other.MoveTo(*this);
+				else if (other.st_.size() == 0)
+						this->MoveTo(other);
+				else {
+						if (st_.top()->GetR() > other.st_.top()->GetR())
+								other.MoveTo(*this);
+						else
+								this->MoveTo(other);
+				}
+		}
+		void MoveTo(Bar& target) {
+				target.st_.push(st_.top());
+				st_.pop();
+		}
 };
 
 class Solver {
@@ -98,62 +98,62 @@ public:
 };
 
 class Hanoy {
-    static const size_t N = 3;
-	Bar bars_[N];
-    Ring* r;
-    size_t countRings_;
-    Solver solver_;
+		static const size_t N = 3;
+		Bar bars_[N];
+		Ring* r;
+		size_t countRings_;
+		Solver solver_;
 public:
-    Hanoy(size_t size): 
-        r(new Ring[size]), 
-        countRings_(size),
-        solver_(size){
-        for (int i = size-1; i >= 0; --i) {
-            bars_[0].Push(r + i);
-        }
-    }
-	void ShowState(){ // console output
-	    Bar copy[N];
-	    size_t max = 0;
-	    for (int i = 0; i < N; i++){
-	        copy[i] = bars_[i];
-	        if (max < bars_[i].GetSize())
-	            max = bars_[i].GetSize();
-	    }
-	    ++max;
-	    while(max > 0) {
-	        for (int i = 0; i < N; i++) {
-	            copy[i].ShowLevel(max);
-	        }
-            cout << endl;
-	        --max;
-	    }
-	    cout << string(9, '-') << endl;
-	}
-	void Solve() {
-	    bool even = countRings_+1 % 2;
-	    
-	    while(bars_[N-1].GetSize() != countRings_){
-	        solver_.Move(bars_);
-            ShowState();
-            // bars_[0].Swap(bars_[f]);
-            // ShowState();
-            // bars_[0].Swap(bars_[s]);
-            // ShowState();
-            // bars_[1].Swap(bars_[2]);
-            // ShowState();
-	    }
-	}
-	size_t GetSteps() {
-	    return solver_.GetSteps();
-	}
+		Hanoy(size_t size): 
+				r(new Ring[size]), 
+				countRings_(size),
+				solver_(size){
+				for (int i = size-1; i >= 0; --i) {
+						bars_[0].Push(r + i);
+				}
+		}
+		void ShowState(){ // console output
+				Bar copy[N];
+				size_t max = 0;
+				for (int i = 0; i < N; i++){
+						copy[i] = bars_[i];
+						if (max < bars_[i].GetSize())
+								max = bars_[i].GetSize();
+				}
+				++max;
+				while(max > 0) {
+						for (int i = 0; i < N; i++) {
+								copy[i].ShowLevel(max);
+						}
+							cout << endl;
+						--max;
+				}
+				cout << string(9, '-') << endl;
+		}
+		void Solve() {
+				bool even = countRings_+1 % 2;
+				
+				while(bars_[N-1].GetSize() != countRings_){
+						solver_.Move(bars_);
+							ShowState();
+							// bars_[0].Swap(bars_[f]);
+							// ShowState();
+							// bars_[0].Swap(bars_[s]);
+							// ShowState();
+							// bars_[1].Swap(bars_[2]);
+							// ShowState();
+				}
+		}
+		size_t GetSteps() {
+				return solver_.GetSteps();
+		}
 };
 
 int main()
 {
 // 	std::cout << "main";
 	Hanoy tower(5);
-	
+
 	tower.Solve();
 	cout << tower.GetSteps() << endl;
 	

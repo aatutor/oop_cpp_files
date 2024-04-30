@@ -8,12 +8,12 @@ class Stack {
 	int st_[FULL + 1];
 	int top_;
 public:
-	Stack();
 	void Clear();
-	bool IsEmpty();
+	Stack();
 	bool IsFull();
-	int GetCount();
 	void Push(int);
+	int GetCount();
+	bool IsEmpty();
 	int GetTop();
 	void Pop();
 	int Extract();
