@@ -26,9 +26,9 @@ int main ()
 	cout << file.stream_ << endl; // 2
 	cout << file.input_ << endl; // 10
 	cout << file.output_<< endl; // 20
+
 	cout << file.InFile::stream_ << endl; // 2
 	cout << file.OutFile::stream_ << endl; // 2
-
 	cout << file.File::stream_ << endl; // 2
 
 	return 0;

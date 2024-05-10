@@ -7,7 +7,7 @@ protected:
 	std::string kind_;
 public:
 	Animal(std::string name, std::string kind);
-	virtual void Speak()=0;
+	virtual std::string Speak()=0;
 };
 
 class Frog: public Animal {
@@ -45,7 +45,7 @@ int main ()
 	};
 	
 	for(int k=0; k<COUNT; k++)
-		animals[k]->Speak();
+		std::cout << animals[k]->Speak() << "\n";
 
 	for(int k=0; k<COUNT; k++)
 		delete animals[k];
