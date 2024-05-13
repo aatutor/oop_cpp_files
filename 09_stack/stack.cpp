@@ -12,6 +12,7 @@ public:
 	Stack();
 	bool IsFull();
 	void Push(int);
+	void operator>> (ostream&);
 	int GetCount();
 	bool IsEmpty();
 	int GetTop();
@@ -27,6 +28,9 @@ int main()
 	st.Push(2);
 	st.Push(5);
 	st.Push(1);
+
+	st >> cout;
+
 	cout << st.Extract() << endl;
 	cout << st.Extract() << endl;
 	cout << st.Extract() << endl;
