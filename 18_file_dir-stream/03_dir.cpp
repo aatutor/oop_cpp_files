@@ -32,8 +32,7 @@ void createDirectory(const char* name)
     if (_mkdir(name) == -1)
         cout << "Error!\n Couldn't create directory.\n";
     else
-        cout << "OK: " 
-            << name << " was created\n\n";
+        cout << "OK: " << name << " was created\n\n";
 }
 //Переименовать существующую директорию
 void renameDirectory(const char* oldName, const char* newName)
@@ -53,8 +52,7 @@ void removeDirectory(const char* name)
     if (_rmdir(name) == -1)
         cout << "Error!\n Couldn't remove directory.\n";
     else
-        cout << "OK: " 
-            << name << " was removed\n\n";
+        cout << "OK: " << name << " was removed\n\n";
 }
 // Вывести список дерикторий внутри текущей
 void showDirectories()

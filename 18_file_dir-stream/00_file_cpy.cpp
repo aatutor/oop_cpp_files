@@ -1,9 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <string>
+
 #include <windows.h>
 #include <io.h>
 #include <stdio.h>
-#include <string>
 
 //Функция копирования файла
 void CopyFile(const char *source, const char *destination)
@@ -11,11 +12,11 @@ void CopyFile(const char *source, const char *destination)
 	FILE *src, *dest;
 
 	// Открытие файла-источника
-	if ( (src = fopen(source, "rb")) == 0 ){
+	if ( (src = fopen(source, "rb")) == NULL ){
 		throw "Failed to open source file";
 	}
 	// Открытие файла-назначения (куда копировать)
-	if ( (dest = fopen(destination, "wb")) == 0 ) {
+	if ( (dest = fopen(destination, "wb")) == NULL ) {
 		throw "Failed to open destination file";
 	}
 
@@ -46,7 +47,7 @@ void Test1()
 	using namespace std;
 	try {
 		{
-			FILE* file = fopen("test.txt", "w");
+			FILE* file = fopen("./test.txt", "w");
 			fputs("int main()\n{\n\tcout << \"Hello World\" << endl;\n}", file);
 			fclose(file);
 		}

@@ -25,18 +25,19 @@ int main()
 
 void use_ofstream(const char* fileName)
 {
-	ofstream oFile(fileName, ios::out);
+	ofstream oFile(fileName, std::ios::out);
 
+// TODO: check is_open
 	cout << "source: ";
 	for (char c = 'A'; c <= 'Z'; c++) {
-		cout << c;
-		//oFile.put(c);
+		// oFile.put(c);
 		oFile << c;
+		cout << c;
 	}
 	cout << endl;
 
-	oFile.write("\n Hello world", 20);
-	//oFile << "\n Hello world";
+	// oFile.write("\n Hello world", 20);
+	oFile << "\n Hello world";
 
 	oFile.close();
 }
@@ -47,7 +48,7 @@ void use_ifstream(const char* name)
 
 	char line[100];
 
-	//iFile.get(line, 100, '\n');
+	// iFile.get(line, 100, '\n');
 	iFile.getline(line, 100);
 	cout << "in file> chars: " << line << endl;
 
@@ -98,3 +99,4 @@ void use_struct(const char* name)
 	file.close();
 }
 
+// TODO: read struct

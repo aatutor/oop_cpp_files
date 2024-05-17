@@ -19,21 +19,23 @@ int main()
 			return 1;
 
 		fwrite(text.c_str(), sizeof(char), text.length()+1, file);
+
 		fclose(file);
 	}
-
 	srch("test");
-	// system("pause");
-	rename("test.txt", "new.txt");
-	srch("new");
-	// system("pause");
+	system("pause");
 
+	rename("test.txt", "new.txt");
+
+	srch("new");
+	system("pause");
 	{
-		char dest[100];
+		char dest[1000];
 		FILE* file = fopen("new.txt", "r");
 		if (!file)
 			return 1;
-		fread(dest, sizeof(char), 100, file);
+
+		fread(dest, sizeof(char), 1000, file);
 		fclose(file);
 
 		cout << dest << endl;
