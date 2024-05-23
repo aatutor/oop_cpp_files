@@ -1,4 +1,5 @@
 #include <iostream>
+#include <initializer_list>
 
 struct Node {
 	int val;
@@ -114,9 +115,8 @@ void List::PushBack(int val) {
 	}
 	current->next = temp;
 }
-List::List(std::initializer_list<int> list) {
-	
-}
+
+
 
 int List::Extract() {
 	if ( IsEmpty() ) 
@@ -194,3 +194,19 @@ void List::Insert(int pos, int val) {
 	temp->next = current;
 }
 #endif
+
+List::List(std::initializer_list<int> list) {
+#if 1
+	const int* temp = list.begin();
+	while(temp != list.end()) {
+		this->PushBack(*temp);
+		++temp;
+	}
+#else
+	const int* temp = list.end();
+	while(temp != list.begin()) {
+		--temp;
+		this->PushFront(*temp);
+	}
+#endif
+}
