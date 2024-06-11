@@ -6,10 +6,13 @@ function foo(ftor) {
 
 function main() {
 	var i = 0;
-	foo(
+	var a = foo(
 		(a, b) => {
 			i++;
 			return a + b;
 		}
 	);
+	console.log(a + ' ' + i);
 }
+
+main();

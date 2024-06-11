@@ -20,26 +20,25 @@ int main ()
 	{
 		vector<int> arr{3, 5, 1, 8, -20};
 
-		{
-			for(auto x : arr) {
-				cout << x <<" ";
-			}
-			cout << endl;
+		for(auto x : arr) {
+			cout << x <<" ";
 		}
-		{
-			sort(begin(arr), end(arr));
+		cout << endl;
+		
 
-			for_each(arr.begin(), arr.end(), [](int x){
-				cout << x <<" ";
-			});
-			cout << endl;
-		}
-		{
-			sort(arr.begin(), arr.end(), greater<int>()); // default = std::less - функторы/предикаты
+		sort(begin(arr), end(arr));
 
-			copy(arr.begin(), arr.end(), ostream_iterator<int>(cout, " "));
-			cout << endl;
-		}
+		for_each(arr.begin(), arr.end(), [](int x){
+			cout << x <<" ";
+		});
+		cout << endl;
+		
+		
+		sort(arr.begin(), arr.end(), greater<int>()); // default = std::less - функторы/предикаты
+
+		copy(arr.begin(), arr.end(), ostream_iterator<int>(cout, " "));
+		cout << endl;
+
 	}
 
 	return 0;

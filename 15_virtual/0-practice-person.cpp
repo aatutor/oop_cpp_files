@@ -57,7 +57,7 @@ void Test()
 		person[2] = new Person("Petrovich", 53);
 
 		for(int i = 0; i < 3; i++)
-			person[icout << ]->Info() << endl;
+			cout << person[i]->Info() << endl;
 	}
 }
 
