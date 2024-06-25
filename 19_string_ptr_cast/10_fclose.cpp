@@ -39,7 +39,7 @@ public:
 };
 void f2()
 {
-	FileOpen MyFile("test.txt", "r+");
+	FileOpen myFile("test.txt", "r+");
 	//здесь выполняем нужную работу с файлом
 }
 // TODO: добавить работу с файлом

@@ -6,7 +6,6 @@
 #include <array>
 using namespace std;
 
-const int N = 5;
 
 template <class IT>
 void ShowArray(IT begin, IT end)
@@ -17,6 +16,7 @@ void ShowArray(IT begin, IT end)
 	}
 	cout << "\n-----------------------------------\n";
 }
+const int N = 5;
 int main()
 {
 	array<int, N> arr;

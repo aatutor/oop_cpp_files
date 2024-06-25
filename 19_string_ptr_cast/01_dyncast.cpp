@@ -18,7 +18,7 @@ struct B : A {
 template <class T>
 void CheckPtr(T* ptr) {
 	// если произошла ошибка - вернулся nullptr
-	if (ptr) {
+	if (!ptr) {
 		throw "Error work!!!\n\n";
 	}
 	cout << "Good work - ";

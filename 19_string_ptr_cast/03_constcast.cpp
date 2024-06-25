@@ -27,5 +27,8 @@ int main ()
 	test_pow(x); 
 	test_pow(y); 
 	cout<<"After - "<<x<<"\n\n";	//на экране — 100
+
+	cout<<"Y After - "<<y<<"\n\n";	//на экране — 11
+	
 	return 0;
 }

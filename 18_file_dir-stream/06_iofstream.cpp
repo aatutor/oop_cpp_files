@@ -44,7 +44,7 @@ void use_ofstream(const char* fileName)
 void use_ifstream(const char* name)
 {
 	ifstream iFile;
-	iFile.open(name, ios::in);
+	iFile.open(name, std::ios::in);
 
 	char line[100];
 
@@ -60,7 +60,10 @@ void use_ifstream(const char* name)
 
 void use_fstream(const char* name)
 {
-	fstream ioFile(name, ios::out | ios::in); // файл не создается, только открывается
+	using std::cout;
+	using std::endl;
+
+	fstream ioFile(name, std::ios::out | std::ios::in); // файл не создается, только открывается
 	if (!ioFile.is_open()){
 		cout << "not exists file " << name << endl;
 		return;
@@ -75,7 +78,7 @@ void use_fstream(const char* name)
 	cout << endl;
 	ioFile.write("", 1);
 
-	ioFile.seekg(0, ios::beg);
+	ioFile.seekg(0, std::ios::beg);
 
 	char line[100];
 	ioFile.getline(line, 100);
@@ -92,7 +95,7 @@ struct A {
 void use_struct(const char* name)
 {
 	A a{ "hello", 10 };
-	ofstream file(name, ios::out | ios::binary);
+	ofstream file(name, std::ios::out | std::ios::binary);
 
 	file.write((char*)&a, sizeof(a));
 

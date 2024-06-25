@@ -25,7 +25,7 @@ int main() {
 	}
 	{
 		cout << "\nInit:";
-		map<char, int> dict{ {'c', 3},{'d', 5} };
+		map<char, int> dict{ {'c', 3}, {'d', 5} };
 		// map<char, int> dict{ pair<char, int>{'c', 3}, pair<char, int>{'d', 5} };
 		ShowMap(dict);
 
