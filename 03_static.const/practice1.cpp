@@ -5,20 +5,19 @@ using std::string;
 class Car {
 	string model_;
 	int year_;
-	static string conveyourModel_;
+	static string factoryName;
 public:
 	Car();
 	string ToString();
-	static void SetConveyourModel (string model);
+	static void SetFactoryName (string model);
 };
-string Car::conveyourModel_ = "Niva";
+string Car::factoryName = "Niva";
 
-
-int main () 
+int main ()
 {
 	Car lot[3];
 
-	Car::SetConveyourModel("Lada");
+	Car::SetFactoryName("Lada");
 
 	Car lot2[4];
 
