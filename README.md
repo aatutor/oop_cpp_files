@@ -2,10 +2,10 @@
 
 *Номер папки соответсвует номеру лекции, в которой демонстрировались эти исходники.*
 
-[Актуальные](https://oop-cpp-lections-al-teemo-a081cbf0c0758a81115627cecb612d515757c.gitlab.io/) презентации.
+[Актуальные](https://aatutor.github.io/slides_oop_cpp/) презентации.
 [Архив](https://sourceforge.net/projects/cpp-oop-top-aca/files/Lections/active/) со старыми презентациями.
 
-[ДЗ](https://oop-cpp-lections-al-teemo-a081cbf0c0758a81115627cecb612d515757c.gitlab.io/hommy.html)
+[ДЗ](https://aatutor.github.io/slides_oop_cpp/home.html) (рабочие)
 
 ---
 ### Закрывайте пробелы
