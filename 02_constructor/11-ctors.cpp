@@ -6,8 +6,9 @@ private:
 	int x_;
 	int y_;
 public: 
-	Point()
-			: x_(0), y_(0) { 
+	Point() 
+			: x_(0), y_(0) 
+	{ 
 		// default constructor 
 	}
 	Point(int x, int y)
