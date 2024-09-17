@@ -24,9 +24,10 @@ int main () {
 	Student petr("Petrov", arr, 3);	
 	cout << petr.ToString() << endl;
 
+#if 0
 	arr[0] = 5;
 	const Student ivan("Ivanov", arr, 3);
-	cout << petr.ToString() << endl;
-
+	cout << ivan.ToString() << endl;
+#endif
 	return 0;
 }

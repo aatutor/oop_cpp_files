@@ -4,28 +4,26 @@ using std::string;
 
 class Car {
 	string model_;
-	int year_;
+	short year_;
 	static string factoryName;
 public:
-	Car();
+	Car(string model, short year);
 	string ToString();
-	static void SetFactoryName (string model);
+	static void SetFactoryName (string factory);
 };
 string Car::factoryName = "Niva";
 
+
 int main ()
 {
-	Car lot[3];
+	Car lot("Renaut logan", 2010);
 
-	Car::SetFactoryName("Lada");
+	// Car::SetFactoryName("Lada");
 
-	Car lot2[4];
+	Car lot2("Lada vesta");
 
-	for (int i = 0; i < 3; i++)
-		cout << lot[i].ToString() << endl;
-
-	for (int i = 0; i < 4; i++)
-		cout << lot2[i].ToString() << endl;
+	std::cout << lot.ToString() << "\n";
+	std::cout << lot2.ToString() << "\n";
 
 	return 0;
 }
