@@ -22,12 +22,14 @@ class Library {
 	size_t count_;
 public:
 	Library(Book books[], size_t count);
-	// Library(Library& lib);
-	// Library(Library&& lib);
+#if 0
+	Library(Library& lib);
+	Library(Library&& lib);
+#endif
 	~Library();
 	Book& GetBook(size_t index);
-	// std::string ToString();
-	void Print();
+	/// void Print();
+	std::string ToString();
 	Library Concat(Library& lib);
 };
 
@@ -46,14 +48,14 @@ int main ()
 	lib.GetBook(0).author_ = "Alex Pushkin";
 
 	cout << "\tOriginal: " << endl;
-	lib.Print();
+	cout << lib.ToString();
 
 	cout << "\tCopy: " << endl;
-	copy.Print();
+	cout << copy.ToString();
 
 	Library newLib = lib.Concat(copy);
 	cout << "\tConcat: " << endl;
-	newLib.Print();
+	cout << newLib.ToString();
 #endif
 
 	return 0;
