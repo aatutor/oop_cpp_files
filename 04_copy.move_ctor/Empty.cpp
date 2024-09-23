@@ -5,7 +5,7 @@ class Empty {
 	Empty& operator= (const Empty& ptr); 
 												// copy optor
 	...
-}
+};
 {
 	Empty x; // 1
 	Empty y(x); // 2
