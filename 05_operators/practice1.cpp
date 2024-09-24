@@ -25,8 +25,8 @@ public:
 	Library(Book books[], int count);
 	~Library();
 	Book& GetBook(int index);
-	// std::string ToString();
-	void Print();
+	std::string ToString();
+	/// void Print();
 	Library Concat(Library& lib);
 	Library operator+ (Library& lib);
 	Library operator+ (Book& book);
