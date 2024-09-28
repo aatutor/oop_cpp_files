@@ -14,9 +14,9 @@ public:
 
 int main ()
 {
-	Student student("Ivan", 20);
+	Student student("Ivan", 2010);
 	student + "Petrov";
-	std::cout << student.ToString();
+	std::cout << student.ToString(); // Ivan Petrov (14)
 
 	return 0;
 }
