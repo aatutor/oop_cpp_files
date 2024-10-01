@@ -12,7 +12,7 @@ public:
 	Point& operator-= (const Point&);
 	Point& operator*= (const int&);
 	Point& operator/= (const int&);
-}
+};
 
 
 int main ()

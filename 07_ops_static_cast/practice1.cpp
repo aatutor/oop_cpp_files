@@ -2,8 +2,8 @@
 #include <string>
 
 class Array{
-  int* arr_;
-	// int arr_[256];
+  int* ptr_;
+	// int ptr_[256];
   int size_;
 public:
   Array(int size);
@@ -11,9 +11,6 @@ public:
   int& operator[] (int ind);
   void operator() (int ind, int val);
 	void operator() (int size); // Resize
-  operator bool(); // HasNotZero
-  operator int();	 // GetSize
-  // добавим explicit
 };
 
 int main ()
