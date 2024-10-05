@@ -8,7 +8,7 @@ struct Point {
 
 #if 1
 	operator bool() {
-		return (this->x_ == 0) && (this->y_ == 0);
+		return (this->x_ != 0) || (this->y_ != 0);
 	}
 	operator double() {
 		return sqrt(pow(this->x_, 2) + pow(this->y_, 2));
