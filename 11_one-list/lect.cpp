@@ -1,6 +1,8 @@
 #include <iostream>
 #include <initializer_list>
 
+
+
 struct Node {
 	int val;
 	Node* next;
