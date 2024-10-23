@@ -28,28 +28,34 @@ public:
         while(!copy.empty()){
             // res += copy.top().ToString();
             Ring t = copy.top();
-            res += t.ToString()+"-";
+            res = t.ToString()+"-" + res;
             copy.pop();
         }
-        return res;
-    }
-    bool Move(Stick& other) {
-        if (this->st_.empty())
-            throw "stick is empty";
-            
-        Ring t = this->st_.top();
-        if ( t < other.st_.top() ){
-            other.st_.push(t);
-            this->st_.pop();
-            return true;
-        }
-        return false;
+        return  "|"+res;
     }
     void Swap(Stick& other) {
-        if (other.st_.empty() || this->st_.top() < other.st_.top())
-            this->Move(other);
-        else
-            other.Move(*this);
+        if (this->st_.empty() && other.st_.empty())
+            throw "nothing to swap";
+            // return;
+
+        if (!other.st_.empty() && !this->st_.empty()){
+            if (this->st_.top() < other.st_.top())
+                this->Move(other);
+            else
+                other.Move(*this);
+        }
+        else{
+            if (other.st_.empty())
+                this->Move(other);
+            else
+                other.Move(*this);
+        }
+            
+    }
+private:
+    void Move(Stick& other) {
+        other.st_.push(this->st_.top());
+        this->st_.pop();
     }
 };
 class Hanoy {
@@ -64,33 +70,49 @@ public:
     void operator>> (std::ostream& out) {
         for(int i=0; i<3; i++)
             out << bar_[i].ToString() << "\n";
+        out << "=======\n";
     }
     void Step(){
         // odd: 0-1 0-2 1-2
         // even: 0-2 0-1 1-2
-        if(count%2){
-            this->bar_[0].Swap(this->bar_[2]);
-            this->bar_[0].Swap(this->bar_[1]);
+        // if(count%2){
+        //     this->bar_[0].Swap(this->bar_[2]);
+        //     this->bar_[0].Swap(this->bar_[1]);
+        // }
+        // else{
+        //     this->bar_[0].Swap(this->bar_[1]);
+        //     this->bar_[0].Swap(this->bar_[2]);
+        // }
+        try{
+            this->bar_[0].Swap(this->bar_[(this->count_%2)? 2 : 1]);
+            this->bar_[0].Swap(this->bar_[(this->count_%2)? 1 : 2]);
+            this->bar_[1].Swap(this->bar_[2]);
         }
-        else{
-            this->bar_[0].Swap(this->bar_[1]);
-            this->bar_[0].Swap(this->bar_[2]);
-            
+        catch (const char* err) {
+            std::cout << "end cz: " << err << "\n";
         }
-        this->bar_[1].Swap(this->bar_[2]);
+    }
+    bool IsDone() {
+        return this->count_ == this->bar_[2].st_.size();
     }
 };
 
 int main()
 {
     using namespace std;
-    Hanoy game(7);
+    Hanoy game(3);
     game >> cout;
+    
+    while(!game.IsDone()) {
+        game.Step();
+        game >> cout;
+    }
+    
+#if 0
     Stick st1(5), st2(3);
     st2.Swap(st1);
     cout << st1.ToString() << endl;
     cout << st2.ToString() << endl;
-#if 0
     
     initializer_list<Ring> list{0, 1, 2};
     for(Ring r : list)
