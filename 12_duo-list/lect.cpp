@@ -27,7 +27,6 @@ public:
 	// ~DEList();
 };
 
-
 int main()
 {
 	DEList list;
@@ -100,6 +99,7 @@ void DEList::PushBack(int val) {
 }
 
 
+
 int DEList::Extract() {
 	if (tail_ == nullptr)
 		throw "List is empty";
@@ -130,16 +130,16 @@ int DEList::Search(int val, int ind/* = 0 */) {
 	return -1;
 }
 
-
 void DEList::Remove(int ind) {
-	if (ind == -1) 
+	if (ind < 0) 
 		return;
 		
 	Node* temp = top_;
-	for (int i = 0; i < ind; i++)
+	for (int i = 0; i < ind 
+			&& temp != nullptr; i++)
 		temp = temp->next;
 
-	if (temp->prev) 
+	if (temp->prev != nullptr) 
 		(temp->prev)->next = temp->next;
 	else
 		top_ = temp->next;
