@@ -24,7 +24,7 @@ int main()
 }
 #else
 
-struct A{
+interface A{
 	// A() { std::cout << "0\n"; } // solve #1
 	A(int x){
 		std::cout << x << "\n";	
@@ -34,7 +34,7 @@ struct B: virtual A {
 	B(): A(1){}
 };
 struct C: B {
-	C() {}
+	C(): /*A(),*/ B() {}
 	// C(): A(2){} // solve #2
 };
 

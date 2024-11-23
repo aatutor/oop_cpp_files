@@ -10,7 +10,7 @@ public:
 };
 class Child : public Parent {
 public:
-	virtual void Foo() {
+	virtual void Foo() override {
 		cout << "Child::Foo\n";
 	}
 };
