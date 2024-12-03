@@ -57,13 +57,12 @@ void srch(const char* name) {
 	_finddata_t* fileInfo = new _finddata_t;
 	char* path = strcat(name, "*");
 	long group = _findfirst(path, fileInfo);
+	delete path;
  
 	int count = 0;
 	int srchResult = group;
 	while (srchResult != -1) {
 		count++;
-		if (fileInfo->attrib & _A_SUBDIR)
-			cout << fileInfo->size << " ";
 		cout << fileInfo->name << endl;
 		srchResult = _findnext(group, fileInfo);
 	}
@@ -85,8 +84,6 @@ void srch(string&& name)
 	int srchResult = group;
 	while (srchResult != -1) {
 		count++;
-		if (fileInfo->attrib & _A_SUBDIR)
-			cout << fileInfo->size << " ";
 		cout << fileInfo->name << endl;
 		srchResult = _findnext(group, fileInfo);
 	}
@@ -122,8 +119,6 @@ void srch(string&& name)
 	int srchResult = group;
 	while (srchResult != -1) {
 		count++;
-		if (fileInfo->attrib & _A_SUBDIR)
-			cout << fileInfo->size << " ";
 		cout << fileInfo->name << endl;
 		srchResult = _findnext(group, fileInfo);
 	}
