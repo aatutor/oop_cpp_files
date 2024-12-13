@@ -7,14 +7,16 @@ using namespace std;
 //объекта нельзя
 void test_pow(const int& v)
 {
+#if 0
+	v = 10; // assignment of read-only variable
+#endif
 	//снимаем модификатор const
-	//и теперь можем изменять объект
 	int* temp = const_cast<int*>(&v);
 #if 0
 	int& temp = const_cast<int>(v);
 	//error: invalid use of const_cast with type 'int', which is not a pointer, reference, nor a pointer-to-data-member type
 #endif
-	//изменение объекта
+	//и теперь можем изменять объект
 	*temp = v * v;
 }
 

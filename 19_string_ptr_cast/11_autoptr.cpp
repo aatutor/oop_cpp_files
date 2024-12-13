@@ -3,11 +3,9 @@
 #include <memory>
 using namespace std;
 
-class IClonable {
-	virtual IClonable* Clone() const = 0;
-}
 
-template <class X> class My_auto_ptr
+template <class X> 
+class My_auto_ptr
 {
 	X *ptr;
 public: //конструктор и деструктор
@@ -27,6 +25,10 @@ public: //конструктор и деструктор
 		return ptr;
 	}
 };
+
+class IClonable {
+	virtual IClonable* Clone() const = 0;
+}
 struct Temp : public IClonable
 {
 	Temp() { cout << "Temp\n\n"; }

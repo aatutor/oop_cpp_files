@@ -1,9 +1,9 @@
 // #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-using namespace std;
 
 int main()
 {
+	using namespace std;
 	string w1 = "Hello";
 	string w2 = "world";
 

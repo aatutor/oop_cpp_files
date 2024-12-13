@@ -1,16 +1,14 @@
 // #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-using namespace std;
 
 int main()
-// int main(int argc, char *argv[])
 {
-	int i;
-	for( i=0; i<10; i++){
-		cout << static_cast<double>(i)/3 << "\t";
-		//приведение переменной i к типу double
-		//результаты деления вещественные
-	}
+	std::cout << 1/3 << std::endl;
+
+	std::cout << 1.0/3 << std::endl;
+	std::cout << (float)1/3 << std::endl;
+
+	std::cout << static_cast<float>(1)/3 << std::endl;
 
 	return 0;
 }
