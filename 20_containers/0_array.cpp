@@ -16,11 +16,14 @@ void ShowArray(IT begin, IT end)
 	}
 	cout << "\n-----------------------------------\n";
 }
-const int N = 5;
 int main()
 {
+	const int N = 5;
+#if 1
 	array<int, N> arr;
-	// int simpleArray[N];
+#else
+	int simpleArray[N];
+#endif
 
 	for(int i = 0; i != arr.size(); ++i){
 		arr[i] = i * i;

@@ -21,12 +21,17 @@ int main() {
 		dict['a'] = 1;
 		dict['b'] = 2;
 
+		dict['a'] = 10;
+		
 		ShowMap(dict);
 	}
 	{
 		cout << "\nInit:";
+#if 1
 		map<char, int> dict{ {'c', 3}, {'d', 5} };
-		// map<char, int> dict{ pair<char, int>{'c', 3}, pair<char, int>{'d', 5} };
+#else
+		map<char, int> dict{ pair<char, int>{'c', 3}, pair<char, int>{'d', 5} };
+#endif
 		ShowMap(dict);
 
 		cout << "\nInsert:";
